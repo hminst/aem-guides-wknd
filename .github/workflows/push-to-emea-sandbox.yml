@@ -37,4 +37,4 @@ jobs:
 
       - name: Push changes to WKND Production
         run:
-          git push -u wknd master:${TARGET_BRANCH_PROD}
+          git push --force -u wknd master:${TARGET_BRANCH_PROD}
