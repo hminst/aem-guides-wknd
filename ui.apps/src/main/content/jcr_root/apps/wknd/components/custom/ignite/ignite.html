@@ -1,0 +1,9 @@
+<div
+  class="cmp-ignite"
+  data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+  data-sly-use.ignite="com.adobe.aem.guides.wknd.core.models.Ignite"
+  data-cmp-data-layer="${ignite.data.json}"
+>
+${properties.text}
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=ignite.empty}"></sly> 
