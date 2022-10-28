@@ -49,6 +49,8 @@
                             <goal>enforce</goal>
                         </goals>
                         <configuration>
+                            <!-- skip enforcer for ignite. else we would need to update these rules all the time... -->
+                            <skip>true</skip>
                             <rules>
                                 <!-- rules being inserted by archetype-pre-package.groovy -->
                                 <requireFileChecksum>

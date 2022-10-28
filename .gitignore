@@ -87,3 +87,4 @@ node/
 node_modules/
 
 wknd-docker/*
+dispatcher/src/conf.dispatcher.d/cache/default_invalidate.any
