@@ -1,0 +1,5 @@
+
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MarijaContact"></sly>
+<p>${model.title}</p>
+
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
