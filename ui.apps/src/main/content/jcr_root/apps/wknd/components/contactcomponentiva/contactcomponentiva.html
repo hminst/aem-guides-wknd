@@ -1,0 +1,4 @@
+<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+<h1 data-sly-test="${properties.firstName}">First Name: ${properties.firstName}</h1>
+<h1 data-sly-test="${properties.lastName}">Last Name: ${properties.lastName}</h1>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
