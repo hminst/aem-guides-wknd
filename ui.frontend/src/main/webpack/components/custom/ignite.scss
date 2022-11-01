@@ -1,0 +1,11 @@
+.cmp-ignite {
+
+    &--dark {
+        background: black;
+        color: white;
+    }
+
+    &--yellow {
+        background-color: $brand-primary;
+    }
+}
