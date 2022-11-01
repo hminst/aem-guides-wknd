@@ -1,11 +1,9 @@
 
-<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MarijaContact"
-     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-></sly>
-<p>${model.title}</p>
-<p>${model.firstName}</p>
-<p>${model.lastName}</p>
-<p>${model.phoneNumber}</p>
-<p>${model.email}</p>
-
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MarijaContact"/>
+<span>${model.title}</span><br/>
+<span>${model.firstName}</span> <br/>
+<span>${model.lastName}</span> <br/>
+<span>${model.phoneNumber}</span> <br/>
+<span>${model.email}</span> <br/>
+<sly data-sly-call="${templates.placeholder @isEmpty=!hasContent}"></sly>
