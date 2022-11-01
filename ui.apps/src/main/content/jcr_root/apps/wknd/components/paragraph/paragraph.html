@@ -1,0 +1,13 @@
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.valtech.aem.learning.core.components.models.paragraph.ParagraphModel"/>
+
+<span>${model.paragraph}</span>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
+
+<!--<p data-sly-test="${properties.paragraph}">Text property: ${properties.paragraph}</p>-->
+
+<!--<pre data-sly-use.paragraph="com.adobe.aem.guides.wknd.core.models.ParagraphModel">-->
+<!--Paragraph says:-->
+<!--${param.message}-->
+<!--</pre>-->
