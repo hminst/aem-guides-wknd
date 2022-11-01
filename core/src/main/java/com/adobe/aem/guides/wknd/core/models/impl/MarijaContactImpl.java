@@ -1,5 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
+
 import com.adobe.aem.guides.wknd.core.models.ImageList;
 import com.adobe.aem.guides.wknd.core.models.MarijaContact;
 import com.day.cq.search.QueryBuilder;
@@ -10,6 +12,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -29,23 +32,17 @@ public class MarijaContactImpl implements MarijaContact {
   @OSGiService
   private ModelFactory modelFactory;
 
-  @OSGiService
-  @Required
-  private QueryBuilder queryBuilder;
-  @ValueMapValue
-  @Optional
+  @ValueMapValue(name="title", injectionStrategy=InjectionStrategy.OPTIONAL)
   private String title;
-  @ValueMapValue
-  @Required
+  @ValueMapValue(name="firstName", injectionStrategy=InjectionStrategy.REQUIRED)
   private String firstName;
-  @ValueMapValue
-  @Required
+  @ValueMapValue(name="lastName", injectionStrategy=InjectionStrategy.
+  REQUIRED)
   private String lastName;
-  @ValueMapValue
-  @Required
+  @ValueMapValue(name="phoneNumber", injectionStrategy=InjectionStrategy.
+  REQUIRED)
   private String phoneNumber;
-  @ValueMapValue
-  @Optional
+  @ValueMapValue(name="email", injectionStrategy=InjectionStrategy.OPTIONAL)
   private String email;
 
 

@@ -1,5 +1,11 @@
 
-<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MarijaContact"></sly>
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MarijaContact"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+></sly>
 <p>${model.title}</p>
+<p>${model.firstName}</p>
+<p>${model.lastName}</p>
+<p>${model.phoneNumber}</p>
+<p>${model.email}</p>
 
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
