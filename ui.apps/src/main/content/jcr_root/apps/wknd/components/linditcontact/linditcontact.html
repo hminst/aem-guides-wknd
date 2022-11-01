@@ -16,11 +16,11 @@
 
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
 <sly data-sly-use.contact="com.adobe.aem.guides.wknd.core.models.LinditContactModel"/>
-<h1>${contact.title}</h1>
+<h1 data-sly-test="${contact.title}">${contact.title}</h1>
 <p>${contact.firstName}</p>
 <p>${contact.lastName}</p>
 <p>${contact.phoneNumber}</p>
-<p>${contact.emailAddress}</p>
+<p data-sly-test="${contact.emailAddress}">${contact.emailAddress}</p>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!contact.hasContent}"></sly>
 
 

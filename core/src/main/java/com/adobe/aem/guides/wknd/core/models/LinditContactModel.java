@@ -42,7 +42,7 @@ public class LinditContactModel {
     }
 
     public boolean hasContent() {
-        return StringUtils.isNoneBlank(title, firstName, lastName, phoneNumber, emailAddress);
+        return StringUtils.isNoneBlank(firstName, lastName, phoneNumber);
     }
 
 }
