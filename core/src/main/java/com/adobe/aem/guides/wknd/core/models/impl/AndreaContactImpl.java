@@ -1,36 +1,33 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
 
-import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
 
 import com.adobe.aem.guides.wknd.core.models.AndreaContact;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class,
-    adapters = {AndreaContact.class},
-    resourceType = {AndreaContactImpl.RESOURCE_TYPE})
+    adapters = AndreaContact.class,
+    resourceType = AndreaContactImpl.RESOURCE_TYPE,
+  defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class AndreaContactImpl implements AndreaContact {
 
   protected static final String RESOURCE_TYPE = "wknd/components/andrea-beleska-contact";
 
-  @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
-  protected String  title;
-  @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
-  protected String  firstName;
-
   @ValueMapValue
-  @Required
+  protected String title;
+  @ValueMapValue
+  protected String firstName;
+  @ValueMapValue
   private String lastName;
 
-  @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
+  @ValueMapValue
   private String emailAddress;
 
-  @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
-  private String  phoneNumber;
+  @ValueMapValue
+  private String phoneNumber;
 
 
   @Override
