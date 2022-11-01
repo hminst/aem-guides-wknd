@@ -13,7 +13,7 @@
     <items jcr:primaryType="nt:unstructured">
       <properties
         jcr:primaryType="nt:unstructured"
-        jcr:title="User Properties"
+        jcr:title="Contact"
         sling:resourceType="granite/ui/components/foundation/container">
         <layout
           jcr:primaryType="nt:unstructured"
@@ -21,27 +21,27 @@
         <items jcr:primaryType="nt:unstructured">
           <title jcr:primaryType="nt:unstructured"
                  sling:resourceType="granite/ui/components/foundation/form/textfield"
-                 fieldLabel="Title:"
+                 fieldLabel="Title"
                  fieldDescription="Enter title"
                  name="./title"/>
           <firstName jcr:primaryType="nt:unstructured"
                      sling:resourceType="granite/ui/components/foundation/form/textfield"
-                     fieldLabel="First name:"
+                     fieldLabel="First name"
                      fieldDescription="Enter first name"
                      name="./firstName"/>
           <lastName jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/form/textfield"
-                    fieldLabel="Last name:"
+                    fieldLabel="Last name"
                     fieldDescription="Enter last name"
                     name="./lastName"/>
           <phoneNum jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/form/textfield"
-                    fieldLabel="Phone number:"
+                    fieldLabel="Phone number"
                     fieldDescription="Enter phone number"
                     name="./phoneNum"/>
           <email jcr:primaryType="nt:unstructured"
                      sling:resourceType="granite/ui/components/foundation/form/textfield"
-                     fieldLabel="Email:"
+                     fieldLabel="Email"
                      fieldDescription="Enter email address"
                      name="./email"/>
 
