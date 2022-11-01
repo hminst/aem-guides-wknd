@@ -629,7 +629,7 @@ Bundle-DocURL:
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
+                    <!--plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <executions>
@@ -640,7 +640,7 @@ Bundle-DocURL:
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
