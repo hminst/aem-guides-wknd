@@ -1,4 +1,7 @@
-<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
-<h1 data-sly-test="${properties.firstName}">First Name: ${properties.firstName}</h1>
-<h1 data-sly-test="${properties.lastName}">Last Name: ${properties.lastName}</h1>
-<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
+<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ContactComponentIva"/>
+<span>${model.title}</span> <br/>
+<span>${model.firstName}</span> <br/>
+<span>${model.lastName}</span>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
+
