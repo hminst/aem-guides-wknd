@@ -2,6 +2,7 @@ package com.adobe.aem.guides.wknd.core.models.impl;
 
 import com.adobe.aem.guides.wknd.core.models.MarijaContact;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
@@ -9,22 +10,20 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(
     adaptables = {SlingHttpServletRequest.class},
     adapters = {MarijaContact.class},
-    resourceType = {MarijaContactImpl.RESOURCE_TYPE}
+    resourceType = {MarijaContactImpl.RESOURCE_TYPE},defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class MarijaContactImpl implements MarijaContact {
   protected static final String RESOURCE_TYPE = "wknd/components/marija-contact";
 
-  @ValueMapValue(name="title", injectionStrategy=InjectionStrategy.OPTIONAL)
+  @ValueMapValue
   private String title;
-  @ValueMapValue(name="firstName", injectionStrategy=InjectionStrategy.REQUIRED)
+  @ValueMapValue
   private String firstName;
-  @ValueMapValue(name="lastName", injectionStrategy=InjectionStrategy.
-  REQUIRED)
+  @ValueMapValue
   private String lastName;
-  @ValueMapValue(name="phoneNumber", injectionStrategy=InjectionStrategy.
-  REQUIRED)
+  @ValueMapValue
   private String phoneNumber;
-  @ValueMapValue(name="email", injectionStrategy=InjectionStrategy.OPTIONAL)
+  @ValueMapValue
   private String email;
 
 
