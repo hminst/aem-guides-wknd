@@ -6,6 +6,7 @@ import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_T
 import com.adobe.aem.guides.wknd.core.models.AndreaContact;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
@@ -17,9 +18,12 @@ public class AndreaContactImpl implements AndreaContact {
   protected static final String RESOURCE_TYPE = "wknd/components/andrea-beleska-contact";
 
   @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
+  protected String  title;
+  @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
   protected String  firstName;
 
-  @ValueMapValue(name="lastNameDetail")
+  @ValueMapValue
+  @Required
   private String lastName;
 
   @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
@@ -28,6 +32,11 @@ public class AndreaContactImpl implements AndreaContact {
   @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.REQUIRED)
   private String  phoneNumber;
 
+
+  @Override
+  public String getTitle() {
+    return title;
+  }
 
   @Override
   public String getFirstName() {
