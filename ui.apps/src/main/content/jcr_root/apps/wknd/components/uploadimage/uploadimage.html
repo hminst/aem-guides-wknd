@@ -1,0 +1,6 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.uploadimage.UploadImage"/>
+<div class="image"
+     data-sly-resource="${ '.' @ resourceType = 'core/wcm/components/image/v2/image' }"></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
+
