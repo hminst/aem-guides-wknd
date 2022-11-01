@@ -65,6 +65,13 @@
                             cq:policy="wknd/components/experiencefragment/policy_34642779885901"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/core/components/policies/mapping"/>
+                        <custom 
+                            jcr:primaryType="nt:unstructured">
+                            <ignite 
+                                jcr:primaryType="nt:unstructured" 
+                                sling:resourceType="wcm/core/components/policies/mapping"
+                                cq:policy="wknd/components/custom/ignite/policy_1666948154243"/>
+                        </custom>
                     </components>
                 </wknd>
             </container>

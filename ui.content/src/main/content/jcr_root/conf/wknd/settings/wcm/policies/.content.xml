@@ -1108,6 +1108,36 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_1594238204926>
             </tabs>
+            <custom jcr:primaryType="nt:unstructured">
+                <ignite jcr:primaryType="nt:unstructured">
+                    <policy_1666948154243
+                        jcr:lastModified="{Date}2022-10-28T09:21:28.911Z"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Ignite Component Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Color"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="cmp-ignite--dark"
+                                        cq:styleId="1666948159966"
+                                        cq:styleLabel="Dark"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="cmp-ignite--yellow"
+                                        cq:styleId="1666948170090"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1666948154243>
+                </ignite>
+            </custom>
         </components>
     </wknd>
     <cq jcr:primaryType="nt:unstructured">
