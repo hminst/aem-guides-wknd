@@ -11,30 +11,34 @@
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-          <text
+          <title
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
             fieldLabel="Title"
             name="./title"/>
-          <text
+          <firstName
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
             fieldLabel="First Name"
+            required="{Boolean}ture"
             name="./firstName"/>
-          <text
+          <lastName
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
             fieldLabel="Last Name"
+            required="{Boolean}ture"
             name="./lastName"/>
-          <text
+          <phoneNumber
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
             fieldLabel="Phonenumber"
+            required="{Boolean}ture"
             name="./phoneNumber"/>
-          <text
+          <email
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
             fieldLabel="Email"
+
             name="./email"/>
         </items>
       </column>
