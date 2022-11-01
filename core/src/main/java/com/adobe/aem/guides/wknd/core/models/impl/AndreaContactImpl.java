@@ -17,9 +17,9 @@ public class AndreaContactImpl implements AndreaContact {
   protected static final String RESOURCE_TYPE = "wknd/components/andrea-beleska-contact";
 
   @ValueMapValue
-  protected String title;
+  private String title;
   @ValueMapValue
-  protected String firstName;
+  private String firstName;
   @ValueMapValue
   private String lastName;
 
