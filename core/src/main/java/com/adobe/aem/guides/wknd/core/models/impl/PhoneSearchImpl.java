@@ -1,6 +1,7 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
 import com.adobe.aem.guides.wknd.core.models.PhoneSearch;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
@@ -19,11 +20,16 @@ public class PhoneSearchImpl implements PhoneSearch {
 
     @ObjectClassDefinition
     @interface Config {
-        Map<String, String> map static {
-        map.put("+49", "Germany"),
-        map.put("+55", "Austria"),
-        map.put("+41", "Switzerland");
-        }
+        String[] getCountries() default {
+        "+49:Germany",
+        "+55:Austria",
+        "+41:Switzerland"
+        };
+    }
+
+    @Activate
+    public void activate(Config config){
+
     }
 
     @Override
