@@ -1,9 +1,12 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
+import com.adobe.aem.guides.wknd.core.models.PhoneSearch;
 import com.adobe.aem.guides.wknd.core.models.VanjaContact;
+import java.util.Optional;
 import javax.security.auth.login.CredentialException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
@@ -16,6 +19,9 @@ public class VanjaContactImpl implements VanjaContact {
 
   protected static final String RESOURCE_TYPE = "wknd/components/vanjacontact";
 
+
+  @OSGiService
+  PhoneSearch phoneSearch;
   @ValueMapValue
   private  String title;
   @ValueMapValue
@@ -26,6 +32,8 @@ public class VanjaContactImpl implements VanjaContact {
   private String phoneNumber;
   @ValueMapValue
   private  String email;
+
+
 
   @Override
   public String getTitle() {
@@ -52,6 +60,11 @@ public class VanjaContactImpl implements VanjaContact {
     return email;
   }
 
+  @Override
+  public Optional<String> getCountry() {
+    return phoneSearch.getTheCountry(phoneNumber);
+  }
+
 
   @Override
   public String getData() throws CredentialException {
@@ -62,7 +75,9 @@ public class VanjaContactImpl implements VanjaContact {
           "<br/> The First Name is: " +firstName+
           "<br/> The Last Name is: " +lastName+
           "<br/> The Phonenumber is: " +phoneNumber+
-          "<br/> The email is: " +email;
+          "<br/> The email is: " +email+
+          "<br/> The country is: " +getCountry();
     }
+
   }
 }
