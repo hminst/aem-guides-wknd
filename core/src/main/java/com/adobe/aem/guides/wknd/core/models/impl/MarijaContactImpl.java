@@ -16,7 +16,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 )
 public class MarijaContactImpl implements MarijaContact {
   protected static final String RESOURCE_TYPE = "wknd/components/marija-contact";
-  @OSGiService
+  @OSGiService(injectionStrategy = InjectionStrategy.REQUIRED)
   private MarijaCountryLookupService lookupService;
   @ValueMapValue
   private String title;

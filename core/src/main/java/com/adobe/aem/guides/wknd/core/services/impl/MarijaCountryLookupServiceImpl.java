@@ -30,35 +30,33 @@ public class MarijaCountryLookupServiceImpl implements MarijaCountryLookupServic
     @AttributeDefinition(
         name = "Phone numbers and countries"
     )
-    String[] countryCodeList() default { "+41&Switzerland", "+49&Germany", "+389&North Macedonia" };
-
-
+    String[] countryCode() default { "+41&Switzerland", "+49&Germany", "+389&North Macedonia" };
 
   }
 
 
-  private String[] countryCodeList;
+  private String[] countryCode;
 
 
   @Override
   public String getCountryCodeLookup(String phoneNumber) {
     HashMap<String, String> countryNumber=new HashMap<>();
-    Arrays.stream(countryCodeList).forEach(cc->
+    Arrays.stream(countryCode).forEach(cc->
     {
       List<String> list= Arrays.asList(cc.split("&"));
       countryNumber.put(list.get(0),list.get(1));
     });
+    List<String> phoneNumberList= Arrays.asList(phoneNumber.split("-"));
 
-    return countryNumber.entrySet().stream().filter( e -> e.getKey().substring(0,4).equals( phoneNumber.substring(0,4))).findFirst().get().getValue();
+    return countryNumber.entrySet().stream().filter( e -> e.getKey().contains( phoneNumberList.get(0))).findFirst().get().getValue();
   }
 
   @Activate
   protected void activate(Config config) {
 
-    this.countryCodeList = config.countryCodeList();
+    this.countryCode = config.countryCode();
 
-
-    log.info("Activated Country Lookup Impl with countries [ {} ]", String.join(", ", this.countryCodeList));
+    log.info("Activated Country Lookup Impl with countries [ {} ]", String.join(", ", this.countryCode));
   }
 
   @Deactivate
