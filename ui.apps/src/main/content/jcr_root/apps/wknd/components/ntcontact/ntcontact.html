@@ -16,9 +16,10 @@
 <div data-sly-use.ntcontact="com.adobe.aem.guides.wknd.core.models.NtContact" class="cmp-ntcontact">
     <h1 data-sly-test="${ntcontact.title}" class="cmp-ntcontact__title">Title: ${ntcontact.title}</h1>
     <img id="pokemon-image" src="" alt="Pokemon"/>
-    <p data-sly-test="${ntcontact.firstName}" class="cmp-ntcontact__firstName">First name: ${ntcontact.firstName}</p>
-    <p data-sly-test="${ntcontact.lastName}" class="cmp-ntcontact__lastName">Surname: ${ntcontact.lastName}</p>
+    <p data-sly-test="${ntcontact.firstName}" class="cmp-ntcontact__firstName">First name: <span class="cmp-ntcontact__firstName-span">${ntcontact.firstName}</span></p>
+    <p data-sly-test="${ntcontact.lastName}" class="cmp-ntcontact__lastName">Surname: <span class="cmp-ntcontact__lastName-span">${ntcontact.lastName}</span></p>
     <p data-sly-test="${ntcontact.phoneNumber}" class="cmp-ntcontact__phone">Phone number: ${ntcontact.phoneNumber}</p>
     <p data-sly-test="${ntcontact.email}" class="cmp-ntcontact__email">Email address: ${ntcontact.email}</p>
     <button id="cmp-ntcontact__button" class="cmp-ntcontact__button">Change color</button>
+    <button id="cmp-ntcontact__magic-button" class="cmp-ntcontact__magic-button">Magic button</button>
 </div>
