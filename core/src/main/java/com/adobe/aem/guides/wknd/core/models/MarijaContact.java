@@ -10,5 +10,6 @@ public interface MarijaContact {
   String getLastName();
   String getPhoneNumber();
   String getEmail();
+  String getCountry();
 
 }

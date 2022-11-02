@@ -1,10 +1,12 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
 import com.adobe.aem.guides.wknd.core.models.MarijaContact;
+import com.adobe.aem.guides.wknd.core.services.MarijaCountryLookupService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
@@ -14,7 +16,8 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 )
 public class MarijaContactImpl implements MarijaContact {
   protected static final String RESOURCE_TYPE = "wknd/components/marija-contact";
-
+  @OSGiService
+  private MarijaCountryLookupService lookupService;
   @ValueMapValue
   private String title;
   @ValueMapValue
@@ -50,5 +53,10 @@ public class MarijaContactImpl implements MarijaContact {
   @Override
   public String getEmail() {
     return email;
+  }
+
+  @Override
+  public String getCountry() {
+    return lookupService.getCountryCodeLookup(phoneNumber);
   }
 }
