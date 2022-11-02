@@ -43,7 +43,6 @@ public class HelloWorldModel {
     private Resource currentResource;
     @SlingObject
     private ResourceResolver resourceResolver;
-
     private String message;
 
     @PostConstruct
