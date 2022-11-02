@@ -13,8 +13,10 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<h1 data-sly-test="${properties.title}">Title: ${properties.title}</h1>
-<p data-sly-test="${properties.firstName}">First name: ${properties.firstName}</p>
-<p data-sly-test="${properties.lastName}">Surname: ${properties.lastName}</p>
-<p data-sly-test="${properties.phoneNumber}">Phone number: ${properties.phoneNumber}</p>
-<p data-sly-test="${properties.email}">Email address: ${properties.email}</p>
+<sly data-sly-use.ntcontact="com.adobe.aem.guides.wknd.core.models.NtContact">
+    <h1 data-sly-test="${ntcontact.title}">Title: ${ntcontact.title}</h1>
+    <p data-sly-test="${ntcontact.firstName}">First name: ${ntcontact.firstName}</p>
+    <p data-sly-test="${ntcontact.lastName}">Surname: ${ntcontact.lastName}</p>
+    <p data-sly-test="${ntcontact.phoneNumber}">Phone number: ${ntcontact.phoneNumber}</p>
+    <p data-sly-test="${ntcontact.email}">Email address: ${ntcontact.email}</p>
+</sly>
