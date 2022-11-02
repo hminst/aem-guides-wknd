@@ -9,7 +9,6 @@ public interface AndreaContact {
   String getLastName();
   String getPhoneNumber();
   String getEmail();
-
   String getCountry();
 
 }

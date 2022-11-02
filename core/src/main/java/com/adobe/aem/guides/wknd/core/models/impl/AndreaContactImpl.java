@@ -30,7 +30,7 @@ public class AndreaContactImpl implements AndreaContact {
   private String lastName;
 
   @ValueMapValue
-  private String emailAddress;
+  private String email;
 
   @ValueMapValue
   private String phoneNumber;
@@ -58,7 +58,7 @@ public class AndreaContactImpl implements AndreaContact {
 
   @Override
   public String getEmail() {
-    return emailAddress;
+    return email;
   }
 
   @Override
