@@ -3,12 +3,14 @@ package com.adobe.aem.guides.wknd.core.models.impl;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.caconfig.ConfigurationBuilder;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+import com.adobe.aem.guides.wknd.core.caconfig.IgniteCaConfig;
 import com.adobe.aem.guides.wknd.core.models.Ignite;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
 import com.adobe.cq.wcm.core.components.models.datalayer.builder.DataLayerBuilder;
@@ -42,5 +44,13 @@ public class IgniteImpl implements Ignite {
     @Override
     public boolean isEmpty() {
         return StringUtils.isBlank(text);
+    }
+
+    @Override
+    public String getCaConfigString() {
+        // TODO Auto-generated method stub
+        Resource currentResource = request.getResource();
+        IgniteCaConfig igniteCaConfig = currentResource.adaptTo(ConfigurationBuilder.class).as(IgniteCaConfig.class);
+        return igniteCaConfig.configString();
     }
 }
