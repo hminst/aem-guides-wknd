@@ -3,10 +3,13 @@ package com.adobe.aem.guides.wknd.core.models.impl;
 
 
 import com.adobe.aem.guides.wknd.core.models.AndreaContact;
+import com.adobe.aem.guides.wknd.core.models.PhoneLookUp;
+import javax.inject.Inject;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = {SlingHttpServletRequest.class,Resource.class},
@@ -16,6 +19,9 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class AndreaContactImpl implements AndreaContact {
 
   protected static final String RESOURCE_TYPE = "wknd/components/andrea-beleska-contact";
+
+  @OSGiService
+  private PhoneLookUp lookupService;
 
   @ValueMapValue
   private String title;
@@ -54,6 +60,11 @@ public class AndreaContactImpl implements AndreaContact {
   @Override
   public String getEmail() {
     return emailAddress;
+  }
+
+  @Override
+  public String getCountry() {
+    return lookupService.getCountryByPhone(phoneNumber);
   }
 }
 

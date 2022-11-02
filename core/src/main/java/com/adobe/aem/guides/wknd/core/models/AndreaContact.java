@@ -10,4 +10,6 @@ public interface AndreaContact {
   String getPhoneNumber();
   String getEmail();
 
+  String getCountry();
+
 }
