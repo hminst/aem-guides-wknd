@@ -1,7 +1,9 @@
 package com.adobe.aem.guides.wknd.core.services.impl;
 
 import com.adobe.aem.guides.wknd.core.services.MarijaCountryLookupService;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -26,42 +28,37 @@ public class MarijaCountryLookupServiceImpl implements MarijaCountryLookupServic
   @interface Config {
 
     @AttributeDefinition(
-        name = "Phone numbers"
+        name = "Phone numbers and countries"
     )
-    String[] numbers() default { "+41", "+49", "+389" };
+    String[] countryCodeList() default { "+41&Switzerland", "+49&Germany", "+389&North Macedonia" };
 
-    @AttributeDefinition(
-        name = "Random Activity Seed",
-        description = "Seed used to randomize activity selection"
-    )
-    String[] countries() default {"Switzerland","Germany","North Macedonia"};
 
 
   }
 
 
-  private String[] numbers;
-  private String[] countries;
+  private String[] countryCodeList;
 
 
   @Override
   public String getCountryCodeLookup(String phoneNumber) {
     HashMap<String, String> countryNumber=new HashMap<>();
-    countryNumber.put("+41","Switzerland");
-    countryNumber.put("+49","Germany");
-    countryNumber.put("+389","North Macedonia");
+    Arrays.stream(countryCodeList).forEach(cc->
+    {
+      List<String> list= Arrays.asList(cc.split("&"));
+      countryNumber.put(list.get(0),list.get(1));
+    });
 
-    return countryNumber.entrySet().stream().filter( e -> e.getKey().substring(0,4).equals( phoneNumber.substring(0,4))).findFirst().get().getKey();
+    return countryNumber.entrySet().stream().filter( e -> e.getKey().substring(0,4).equals( phoneNumber.substring(0,4))).findFirst().get().getValue();
   }
 
   @Activate
   protected void activate(Config config) {
 
-    this.numbers = config.numbers();
+    this.countryCodeList = config.countryCodeList();
 
-   this.countries= config.countries();
 
-    log.info("Activated Country Lookup Impl with countries [ {} ]", String.join(", ", this.countries));
+    log.info("Activated Country Lookup Impl with countries [ {} ]", String.join(", ", this.countryCodeList));
   }
 
   @Deactivate
