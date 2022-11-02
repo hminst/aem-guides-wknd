@@ -45,8 +45,8 @@ public class LinditContactModel {
         return emailAddress;
     }
 
-    public String getCountry(){
-        return this.countryLookupService.calculateCountry(this.phoneNumber).orElse("");
+    public String getCountry() {
+        return this.countryLookupService.calculateCountry(this.phoneNumber);
     }
 
     public boolean hasContent() {
