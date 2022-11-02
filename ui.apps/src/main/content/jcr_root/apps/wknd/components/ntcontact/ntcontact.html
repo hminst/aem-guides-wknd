@@ -13,10 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.ntcontact="com.adobe.aem.guides.wknd.core.models.NtContact">
-    <h1 data-sly-test="${ntcontact.title}">Title: ${ntcontact.title}</h1>
-    <p data-sly-test="${ntcontact.firstName}">First name: ${ntcontact.firstName}</p>
-    <p data-sly-test="${ntcontact.lastName}">Surname: ${ntcontact.lastName}</p>
-    <p data-sly-test="${ntcontact.phoneNumber}">Phone number: ${ntcontact.phoneNumber}</p>
-    <p data-sly-test="${ntcontact.email}">Email address: ${ntcontact.email}</p>
-</sly>
+<div data-sly-use.ntcontact="com.adobe.aem.guides.wknd.core.models.NtContact" class="cmp-ntcontact">
+    <h1 data-sly-test="${ntcontact.title}" class="cmp-ntcontact__title">Title: ${ntcontact.title}</h1>
+    <img id="pokemon-image" src="" alt="Pokemon"/>
+    <p data-sly-test="${ntcontact.firstName}" class="cmp-ntcontact__firstName">First name: ${ntcontact.firstName}</p>
+    <p data-sly-test="${ntcontact.lastName}" class="cmp-ntcontact__lastName">Surname: ${ntcontact.lastName}</p>
+    <p data-sly-test="${ntcontact.phoneNumber}" class="cmp-ntcontact__phone">Phone number: ${ntcontact.phoneNumber}</p>
+    <p data-sly-test="${ntcontact.email}" class="cmp-ntcontact__email">Email address: ${ntcontact.email}</p>
+    <button id="cmp-ntcontact__button" class="cmp-ntcontact__button">Change color</button>
+</div>

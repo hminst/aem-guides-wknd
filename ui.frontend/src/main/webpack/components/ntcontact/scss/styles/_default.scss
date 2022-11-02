@@ -1,0 +1,15 @@
+.cmp-ntcontact {
+  font-family: Arial, sans-serif;
+
+  &__email, &__phone {
+    color: #57893C;
+  }
+
+  #pokemon-image {
+    width: 125px;
+    height: 125px;
+    @media only screen and (min-width: 769px) {
+      background-color: #006600;
+    }
+  }
+}
