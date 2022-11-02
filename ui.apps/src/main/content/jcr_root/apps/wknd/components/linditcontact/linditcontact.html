@@ -19,7 +19,7 @@
 <h1 data-sly-test="${contact.title}">${contact.title}</h1>
 <p>${contact.firstName}</p>
 <p>${contact.lastName}</p>
-<p>${contact.phoneNumber}</p>
+<p>${contact.phoneNumber} <span data-sly-test="${contact.country}">(${contact.country})</span></p>
 <p data-sly-test="${contact.emailAddress}">${contact.emailAddress}</p>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!contact.hasContent}"></sly>
 
