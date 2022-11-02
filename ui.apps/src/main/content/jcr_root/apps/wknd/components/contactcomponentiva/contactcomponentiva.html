@@ -1,7 +1,8 @@
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
      data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ContactComponentIva"/>
-<span>${model.title}</span> <br/>
-<span>${model.firstName}</span> <br/>
-<span>${model.lastName}</span>
+<p>${model.title}</p>
+<p>${model.firstName}</p>
+<p>${model.lastName}</p>
+<span>${model.number} (${model.country})</span>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
 

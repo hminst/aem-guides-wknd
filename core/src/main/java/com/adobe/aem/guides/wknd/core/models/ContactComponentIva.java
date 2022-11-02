@@ -4,7 +4,8 @@ public interface ContactComponentIva {
 
     String getTitle();
     String getFirstName();
-
     String getLastName();
+    String getNumber();
+    String getCountry();
 
 }
