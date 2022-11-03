@@ -12,4 +12,16 @@
       background-color: #006600;
     }
   }
+
+  &__theme-dark {
+    padding: 20px;
+    background-color: #393a34;
+    color: white;
+  }
+
+  &__theme-light {
+    padding: 20px;
+    background-color: #F7F7F7;
+    color: black;
+  }
 }

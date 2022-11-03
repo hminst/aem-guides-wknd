@@ -27,7 +27,7 @@ function setPokemonData() {
     xhr.send(null);
 }
 
-if (document.readyState !== "loading") {
+if (document.getElementById('cmp-contact')) {
     setInitialPokemonImage('413');
     document.getElementById('cmp-ntcontact__button').addEventListener('click', () => {
         document.getElementsByClassName('cmp-ntcontact__firstName')[0].style.color = 'fuchsia';
