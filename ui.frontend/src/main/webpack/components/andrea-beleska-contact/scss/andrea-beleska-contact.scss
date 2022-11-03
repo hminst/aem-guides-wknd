@@ -1,7 +1,18 @@
-.font{
-  font-family: Arial ;
+.colour{
+  color: #006600;
 }
 
-.colour{
-  color: #57893C ;
+
+.cmp-contact {
+  font-family: Arial ;
+
+  &--dark {
+
+    background: black;
+    color: white;
+  }
+
+  &--light {
+    background: white;
+    color: black;  }
 }
