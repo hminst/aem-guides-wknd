@@ -13,6 +13,8 @@ public interface Ignite {
         return null;
     }
 
+    String getCaConfigString();
+
     /***
 	 * @return a boolean if the component has content to display.
 	 */

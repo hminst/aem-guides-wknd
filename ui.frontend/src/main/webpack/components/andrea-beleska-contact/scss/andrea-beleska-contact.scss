@@ -1,0 +1,18 @@
+.colour{
+  color: #006600;
+}
+
+
+.cmp-contact {
+  font-family: Arial ;
+
+  &--dark {
+
+    background: black;
+    color: white;
+  }
+
+  &--light {
+    background: white;
+    color: black;  }
+}

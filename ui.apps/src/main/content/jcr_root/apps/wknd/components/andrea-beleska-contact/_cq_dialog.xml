@@ -43,11 +43,16 @@
             required="{Boolean}true"
             name="./phoneNumber"
           />
-          <Email jcr:primaryType="nt:unstructured"
+          <email jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/foundation/form/textfield"
             fieldLabel="Enter your email address:"
             fieldDescrption="Email address"
-            name="./emailAddress" />
+            name="./email" />
+          <styletab
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/include"
+            path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_design/styletab"/>
+
         </items>
       </properties>
     </items>
